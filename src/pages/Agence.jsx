@@ -27,11 +27,16 @@ function Agence() {
     gsap.to(imageDivRef.current, {
       scrollTrigger: {
         trigger: imageDivRef.current,
-        // markers: true,
-        start: "top 30%",
-        end: "top -100%",
-        scrub: true,
+        markers: true,
+        start: "top 28%",
+        end: "top -70%",
         pin: true,
+        pinSpacing: true,
+        pinReparent: true,
+        pinType: "transform",
+        scrub: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
         onUpdate: function (elem) {
           // console.log(elem.progress)
           // console.log(Math.floor(elem.progress*imageArray.length) )
@@ -48,11 +53,11 @@ function Agence() {
   });
 
   return (
-    <div>
-      <div className="section1">
+    <div className="text-black">
+      <div className="section1 relative py-1">
         <div
           ref={imageDivRef}
-          className="h-[20vw] rounded-2xl overflow-hidden w-[15vw] absolute bg-red-500 top-28 left-[30vw]"
+          className="h-[20vw] rounded-2xl overflow-hidden w-[15vw] absolute bg-red-500 top-36 left-[30vw]"
         >
           <img
             className="h-full w-full  object-cover"
@@ -61,7 +66,7 @@ function Agence() {
             alt=""
           />
         </div>
-        <div className="text-white font-[font2] relative">
+        <div className=" font-[font2] relative">
           <div className="mt-[55vh]">
             <h1 className="text-[18vw] text-center uppercase leading-[17vw]">
               Soixan7e <br />
@@ -82,7 +87,7 @@ function Agence() {
           </div>
         </div>
       </div>
-      <div className="section2 h-screen"></div>
+      {/* <div className="section2 h-screen"></div> */}
     </div>
   );
 }
